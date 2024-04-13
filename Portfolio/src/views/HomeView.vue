@@ -46,7 +46,7 @@ const filteredProjectItems = computed(() => {
 })
 </script>
 
-<style lang="scss">
+<style>
 .card {
   color:#333;
   background-color: #f4f4f4;

@@ -1,13 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
+import NavBar from './components/NavBar.vue'
+
 </script>
 
 <template>
+
+  <NavBar />
   <header>
     
 
-    <div class="wrapper">
+    <div class="">
       
 
       <nav>
@@ -19,16 +23,9 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
   </header>
 
-  <!-- <Transition mode="out-in" name="slide-fade">
+  <Transition mode="out-in" name="slide-fade">
     <RouterView />
-  </Transition> -->
-
-  <RouterView v-slot="{ Component }">
-    <Transition mode="out-in" name="bounce">
-      <component :is="Component"/>
-    </Transition>
-  </RouterView>
-
+  </Transition>
 
 </template>
 
@@ -49,39 +46,6 @@ import { RouterLink, RouterView } from 'vue-router'
 .slide-fade-enter-from, .slide-fade-leave-to{
   opacity: 0;
   transform: translate(750px, -750px);
-}
-
-.bounce-enter-active{
-  animation: bounce-in 0.776s;
-}
-
-.bounce-leave-active{
-  animation: bounce-out 0.776s;
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(0.9);
-  }
-  60% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes bounce-out {
-  0% {
-    transform: scale(1);
-  }
-  60% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(0.9);
-    opacity: 0;
-  }
 }
 
 header {
@@ -114,7 +78,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   header {
     display: flex;
     place-items: center;
@@ -135,5 +99,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
