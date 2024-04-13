@@ -19,9 +19,15 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
   </header>
 
-  <Transition mode="out-in" name="slide-fade">
+  <!-- <Transition mode="out-in" name="slide-fade">
     <RouterView />
-  </Transition>
+  </Transition> -->
+
+  <RouterView v-slot="{ Component }">
+    <Transition mode="out-in" name="bounce">
+      <component :is="Component"/>
+    </Transition>
+  </RouterView>
 
 
 </template>
@@ -45,14 +51,42 @@ import { RouterLink, RouterView } from 'vue-router'
   transform: translate(750px, -750px);
 }
 
+.bounce-enter-active{
+  animation: bounce-in 0.776s;
+}
+
+.bounce-leave-active{
+  animation: bounce-out 0.776s;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.9);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
 }
 
 nav {
@@ -91,11 +125,7 @@ nav a:first-of-type {
     margin: 0 2rem 0 0;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+  
 
   nav {
     text-align: left;

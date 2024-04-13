@@ -8,12 +8,18 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        title: "Home"
+      }
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/AboutView.vue'),
+      meta: {
+        title: "About"
+      }
     },
     {
       path: '/projects',
@@ -23,7 +29,29 @@ const router = createRouter({
         title:"Projects"
       }
     },
+    {
+      path: '/projectdetails/:id',
+      name: 'Project Details',
+      component: () => import('../views/ProjectDetailsView.vue'),
+      meta: {
+        dynamicTitle: true
+      }
+    },
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  if(to.meta.dynamicTitle){
+    const projectItems = getProjectItems()
+    .projectItems.value.find(item => item.id == to.params.id)
+    if(projectItems){
+      document.title = `BVG Portfolio | ${projectItems.title}`
+    }
+  }
+  else{
+    document.title = `BVG Portfolio | ${to.meta.title}`
+  }
+  next()
 })
 
 export default router

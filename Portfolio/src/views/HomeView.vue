@@ -8,18 +8,18 @@
     <button @click="selectedCategory = 'photo'">Photo</button>
     <button @click="selectedCategory = ''">All</button>
 
-    <div v-for="portfolioItem in filteredPortfolioItems" :key="portfolioItem" class="card">
-      <router-link :to="`/portfoliodetail/${portfolioItem.id}`">
+    <div v-for="projectItem in filteredProjectItems" :key="projectItem" class="card">
+      <router-link :to="`/projectdetail/${projectItem.id}`">
         Go to this project
       </router-link>
-      <h2>{{ portfolioItem.title }}</h2>
-      <p>{{ portfolioItem.description }}</p>
-      <p>{{ portfolioItem.id }}</p>
-      <p :class="portfolioItem.category">{{ portfolioItem.category }}</p>
+      <h2>{{ projectItem.title }}</h2>
+      <p>{{ projectItem.description }}</p>
+      <p>{{ projectItem.id }}</p>
+      <p :class="projectItem.category">{{ projectItem.category }}</p>
 
-      <img :src="portfolioItem.image" alt="">
-      <div v-if="portfolioItem.link">
-        <a :href="portfolioItem.link">Link</a>
+      <img :src="projectItem.image" alt="">
+      <div v-if="projectItem.link">
+        <a :href="projectItem.link">Link</a>
       </div>
       <div v-else>
 
@@ -32,16 +32,16 @@
 <script setup>
 import { ref, computed } from 'vue'
 import getProjects from '@/modules/getProjects.js'
-const { portfolioItems } = getProjects()
+const { projectItems } = getProjects()
 
 let selectedCategory = ref('')
 
-const filteredPortfolioItems = computed(() => {
+const filteredProjectItems = computed(() => {
   if (selectedCategory.value == '') {
-    return portfolioItems.value
+    return projectItems.value
   }
     else {
-      return portfolioItems.value.filter(item => item.category == selectedCategory.value)
+      return projectItems.value.filter(item => item.category == selectedCategory.value)
     }
 })
 </script>
