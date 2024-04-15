@@ -1,7 +1,7 @@
 <template>
   <div class="font-bold">
     <div v-if="!specificProjectItem">
-      Nothing here, Brother!
+      No project found...
     </div>
     <div v-else>
       <h1>{{ specificProjectItem.title }}</h1>

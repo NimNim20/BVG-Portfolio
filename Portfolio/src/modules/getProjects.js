@@ -9,17 +9,17 @@ const getProjectItems = () => {
       id: 1,
       title: 'Portfolio Item 1',
       description: 'This is the first portfolio item',
-      // image: image1,
-      category: 'web'
-  
+      image: 'https://via.placeholder.com/150',
+      category: 'Web',
+      link: 'https://www.google.com'
     },
     {
       id: 2,
       title: 'Portfolio Item 2',
       description: 'This is the second portfolio item',
+      category: 'Photo',
       image: 'https://via.placeholder.com/150',
-      link: 'https://www.google.com',
-      category: 'photo'
+      link: 'https://www.youtube.com'
     },
     {
       id: 3,

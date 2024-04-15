@@ -1,18 +1,22 @@
 <template>
   <main>
     <h1 class="text-3xl font-bold underline">
-      Hello
+      
     </h1>
-
-    <button @click="selectedCategory = 'web'">Web</button>
-    <button @click="selectedCategory = 'photo'">Photo</button>
-    <button @click="selectedCategory = ''">All</button>
+    <div>
+      <button @click="selectedCategory = 'Web'">Web</button>
+      <button @click="selectedCategory = 'Photo'">Photo</button>
+      <button @click="selectedCategory = ''">All</button>
+    </div>
 
     <div v-for="projectItem in filteredProjectItems" :key="projectItem" class="card">
+      <router-link :to="`/projectdetails/${projectItem.id}`">
+        <h2>Go to this project</h2>
+      </router-link>
       <h2>{{ projectItem.title }}</h2>
       <p>{{ projectItem.description }}</p>
-      <p>{{ projectItem.id }}</p>
       <p :class="projectItem.category">{{ projectItem.category }}</p>
+      <p>{{ projectItem.id }}</p>
 
       <img :src="projectItem.image" alt="">
       <div v-if="projectItem.link">
@@ -53,10 +57,10 @@ const filteredProjectItems = computed(() => {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.web {
-  background-color: #af7012;
-}
-.photo {
-  background-color: #f256e2;
-}
+// .web {
+//   background-color: #af7012;
+// }
+// .photo {
+//   background-color: #f256e2;
+// }
 </style>
