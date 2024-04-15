@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
-import NavBar from './components/NavBar.vue'
+import NavBar from '@/components/NavBar.vue'
 
 </script>
 
@@ -11,12 +11,11 @@ import NavBar from './components/NavBar.vue'
   
   <header>
     
-
-    <div class="">
+    <div>
       <RouterLink>
-
       </RouterLink>
     </div>
+
   </header>
 
   <Transition mode="out-in" name="slide-fade">

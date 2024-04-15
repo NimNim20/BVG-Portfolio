@@ -3,12 +3,12 @@
 </script>
 
 <template>
-  <div class="bg-pink-900 navbar-wrapper fixed top-0 text-white flex justify-between w-full items-center px-4 py-3 pb-2">
-    <h1></h1>
+  <div class="navbar-wrapper fixed top-0 text-white flex justify-between w-full items-center mb-3">
+    <h1 class="category">Hello, I'm Benjamin!</h1>
     <nav>
-        <RouterLink to="/" class="mr-2">Home</RouterLink>
-        <RouterLink to="/about" class="mr-2">About</RouterLink>
-        <RouterLink to="/projects" class="mr-2">My Projects</RouterLink>
+        <RouterLink to="/" class="category mr-2">Home</RouterLink>
+        <RouterLink to="/about" class="category mr-2">About</RouterLink>
+        <RouterLink to="/projects" class="category mr-2">My Projects</RouterLink>
     </nav>
   </div>
   <RouterView />
@@ -16,6 +16,15 @@
 
 
 <style scoped>
+
+.navbar-wrapper {
+  background-color: #301E67;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category{
+  font-size: 1.2rem;
+}
 
 nav a {
   display: inline-block;
