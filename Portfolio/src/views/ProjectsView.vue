@@ -4,32 +4,32 @@
       <div v-for="projectItem in filteredProjectItems" :key="projectItem" class="card w-1/2">
         <div class="filter-buttons flex justify-center mb-4">
           <h1 class="text-1xl font-bold underline">
-            <button @click="selectedCategory = 'Web'" class="text-black p-2">Web</button>
-            <button @click="selectedCategory = 'Photo'" class="text-black p-2">Photo</button>
-            <button @click="selectedCategory = ''" class="text-black p-2">All</button>
+            <button @click="selectedCategory = 'Web'" class="text-white p-2">Web</button>
+            <button @click="selectedCategory = 'Photo'" class="text-white p-2">Photo</button>
+            <button @click="selectedCategory = ''" class="text-white p-2">All</button>
           </h1>
         </div>
-        <h2 class="text-black">{{ projectItem.title }}</h2>
+        <h2 class="text-white">{{ projectItem.title }}</h2>
 
         <p :class="projectItem.category">{{ projectItem.category }}</p>
 
         <div class="project-items flex justify-center items-center">
           <div class="info mr-4">
             <router-link :to="`/projectdetails/${projectItem.id}`">
-              <p class="text-black font-bold underline">Click me for more details</p>
+              <p class="text-white font-bold underline">Click me for more details</p>
             </router-link>
           </div>          
         </div>
 
         <div class="flex flex-row items-center">
           <div class="info-text">
-            <p class="text-black">{{ projectItem.teaser }}</p>
+            <p class="text-white">{{ projectItem.teaser }}</p>
           </div>  
           
           <img :src="projectItem.image" alt="" class="filler-image bg-yellow-900">
         </div>
           <div v-if="projectItem.link">
-            <a :href="projectItem.link" class="font-bold underline">Go to project here</a>
+            <a :href="projectItem.link" class="text-white font-bold underline">Go to project here</a>
           </div>
           <div v-else>
         </div>
@@ -42,10 +42,10 @@
 <script setup>
 // import { RouterLink, RouterView } from 'vue-router'
 import { ref, computed } from 'vue'
-import getProjects from '@/modules/getProjects.js'
 const { projectItems } = getProjects()
+import getProjects from '@/modules/getProjects.js'
 
-let selectedCategory = ref('')
+const selectedCategory = ref('')
 
 const filteredProjectItems = computed(() => {
   if (selectedCategory.value == '') {
@@ -64,7 +64,7 @@ const filteredProjectItems = computed(() => {
   display: flex;
   flex-direction: column;
   color:#333;
-  background-color: #d3d3d3;
+  background-color: #301E67;
   padding: 1rem;
   margin-top: 4rem;
   margin-bottom: 1rem;

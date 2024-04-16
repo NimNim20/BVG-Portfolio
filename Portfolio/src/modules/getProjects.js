@@ -1,16 +1,16 @@
 import { ref } from 'vue'
 
-// import image1 from '@/assets/test.jpeg'
+import image1 from '@/assets/Ghost_Clothing.png'
 
 
 const getProjectItems = () => {
   const projectItems = ref([
     {
       id: 1,
-      title: 'Kvaglund Interactive Folder',
+      title: 'Ghost Clothing Website Mockup',
       teaser: 'This is the first portfolio item and a bunch of other filler text that I can not be bothered to write right now.',
       description: '',
-      image: 'https://picsum.photos/id/237/200/300',
+      image: image1,
       category: 'Web',
       link: 'https://www.google.com'
     },

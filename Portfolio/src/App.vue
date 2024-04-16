@@ -18,11 +18,11 @@ import NavBar from '@/components/NavBar.vue'
 
   </header>
 
+  <RouterView />
 
   <!-- Animations that didn't work -->
-  <Transition mode="out-in" name="slide-fade">
-    <RouterView />
-  </Transition>
+  <!-- <Transition mode="out-in" name="slide-fade"> -->
+  <!-- </Transition> -->
 
 
   <!-- <RouterView v-slot=" { Component }">
@@ -107,7 +107,7 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  border-left: 2px solid var(--color-border);
 }
 
 nav a:first-of-type {

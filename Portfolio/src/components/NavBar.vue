@@ -5,10 +5,11 @@
 <template>
   <div class="navbar fixed top-0 text-white flex justify-between w-full items-center mb-3">
     <h1 class="category">Hello, I'm Benjamin!</h1>
+
     <nav>
-        <RouterLink to="/" class="category mr-2">Home</RouterLink>
-        <RouterLink to="/about" class="category mr-2">About</RouterLink>
-        <RouterLink to="/projects" class="category mr-2">My Projects</RouterLink>
+        <RouterLink to="/" class="category">Home</RouterLink>
+        <RouterLink to="/about" class="category">About</RouterLink>
+        <RouterLink to="/projects" class="category">My Projects</RouterLink>
     </nav>
   </div>
   <RouterView />
@@ -22,7 +23,6 @@
   height: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 
 .category{
   font-size: 1.2rem;
