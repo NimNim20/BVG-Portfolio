@@ -49,7 +49,7 @@ const getProjectItems = () => {
       category: 'Photo',
       image: 'https://picsum.photos/id/237/200/300',
       link: 'https://www.youtube.com'
-    },
+    }
   ])
 
   return { projectItems }
