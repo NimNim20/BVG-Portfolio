@@ -1,47 +1,50 @@
 <template>
   <main>
-    <h1 class="text-3xl font-bold underline">
-      
-    </h1>
-    <!-- <div class="py-5">
-      <button @click="selectedCategory = 'Web'">Web</button>
-      <button @click="selectedCategory = 'Photo'">Photo</button>
-      <button @click="selectedCategory = ''">All</button>
-    </div> -->
+    
+    
+      <div v-for="projectItem in filteredProjectItems" :key="projectItem" class="card w-1/2">
+        <div class="filter-buttons flex justify-center mb-4">
+          <h1 class="text-1xl font-bold underline">
+            <button @click="selectedCategory = 'Web'" class="text-black p-2">Web</button>
+            <button @click="selectedCategory = 'Photo'" class="text-black p-2">Photo</button>
+            <button @click="selectedCategory = ''" class="text-black p-2">All</button>
+          </h1>
+        </div>
+        <h2 class="text-black">{{ projectItem.title }}</h2>
 
-    <div v-for="projectItem in filteredProjectItems" :key="projectItem" class="card">
-      <button @click="selectedCategory = 'Web'">Web</button>
-      <button @click="selectedCategory = 'Photo'">Photo</button>
-      <button @click="selectedCategory = ''">All</button>
-      <router-link :to="`/projectdetails/${projectItem.id}`">
-        <h2>Go to this project</h2>
-      </router-link>
+        <p :class="projectItem.category">{{ projectItem.category }}</p>
 
+        <div class="project-items flex justify-center items-center">
+          <div class="info mr-4">
+            <router-link :to="`/projectdetails/${projectItem.id}`">
+              <p class="text-black font-bold underline">Click me for more details</p>
+            </router-link>
+          </div>          
+        </div>
 
-      <h2>{{ projectItem.title }}</h2>
-      <p>{{ projectItem.description }}</p>
-      <p :class="projectItem.category">{{ projectItem.category }}</p>
-      <p>{{ projectItem.id }}</p>
+        <div class="flex flex-row items-center">
+          <div class="info-text">
+            <p class="text-black">{{ projectItem.description }}</p>
+          </div>  
+          
+          <img :src="projectItem.image" alt="" class="filler-image bg-yellow-900">
+        </div>
+          <div v-if="projectItem.link">
+            <a :href="projectItem.link" class="font-bold underline">Go to project here</a>
+          </div>
+          <div v-else>
+        </div>
+                
 
-      <img :src="projectItem.image" alt="">
-      <div v-if="projectItem.link">
-        <a :href="projectItem.link">Link</a>
-      </div>
-      <div v-else>
-
-      </div>
     </div>
   
   </main>
-
-  <Transition mode="out-in" name="slide-fade">
-    <RouterView />
-  </Transition>
-
+  
 </template>
 
+
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+// import { RouterLink, RouterView } from 'vue-router'
 import { ref, computed } from 'vue'
 import getProjects from '@/modules/getProjects.js'
 const { projectItems } = getProjects()
@@ -60,37 +63,40 @@ const filteredProjectItems = computed(() => {
 
 <style lang="scss">
 .card {
+  height: auto;
+  // width: 55%;
+  display: flex;
+  flex-direction: column;
   color:#333;
-  background-color: #f4f4f4;
-  width: 100vh;
-  padding: 3rem;
-  margin: 2rem;
+  background-color: #d3d3d3;
+  padding: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s ease;
+.card img {
+  display: flex;
+  width: 55%;
+  height: 55%;
+  margin: 1rem 0 0 1rem;
 }
 
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
+.info-text{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 5%;
+  width: 55%;
+  padding: 1rem;
 }
 
-.slide-fade-enter-active, .slide-fade-leave-active{
-  transition: all 0.5s ease;
-
+.project-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-
-.slide-fade-enter-from, .slide-fade-leave-to{
-  opacity: 0;
-  transform: translate(750px, -750px);
-}
-
-// .web {
-//   background-color: #af7012;
-// }
-// .photo {
-//   background-color: #f256e2;
-// }
 </style>
