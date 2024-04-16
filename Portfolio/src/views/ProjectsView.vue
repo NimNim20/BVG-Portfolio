@@ -1,7 +1,6 @@
 <template>
   <main>
     
-    
       <div v-for="projectItem in filteredProjectItems" :key="projectItem" class="card w-1/2">
         <div class="filter-buttons flex justify-center mb-4">
           <h1 class="text-1xl font-bold underline">
@@ -24,7 +23,7 @@
 
         <div class="flex flex-row items-center">
           <div class="info-text">
-            <p class="text-black">{{ projectItem.description }}</p>
+            <p class="text-black">{{ projectItem.teaser }}</p>
           </div>  
           
           <img :src="projectItem.image" alt="" class="filler-image bg-yellow-900">
@@ -34,12 +33,9 @@
           </div>
           <div v-else>
         </div>
-                
-
     </div>
-  
+
   </main>
-  
 </template>
 
 
