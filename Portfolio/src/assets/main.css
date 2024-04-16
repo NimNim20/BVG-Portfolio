@@ -12,9 +12,9 @@
 } */
 
 @media (hover: hover) {
-  a:hover {
+  .nav-links:hover {
     background-color: var(--color-background-soft);
-    color: #000000;
+    color: #000;
     transition: 0.2s ease;
   }
 }
