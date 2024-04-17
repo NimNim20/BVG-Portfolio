@@ -1,5 +1,5 @@
 <template>
-  <div id="scrollToProjects">
+  <div id="scrollToProjects" class="projects">
     <div v-for="projectItem in filteredProjectItems" :key="projectItem" class="card w-1/2">
         <div class="filter-buttons flex justify-center mb-4">
           <h1 class="text-1xl font-bold underline">
@@ -54,6 +54,13 @@ const filteredProjectItems = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+.projects{
+  display: grid;
+  height: auto;
+  padding: 100px 0;
+  gap: 50px;
+}
+
 .card {
   height: auto;
   // width: 55%;

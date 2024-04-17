@@ -83,11 +83,18 @@
   justify-content: center;
   align-items: center;
   color: #000;
-  // background-color: var(--vt-c-white);
+  background-color: var(--vt-c-white);
   padding: 10px 20px;
   height: 100px;
   width: 175px;
   border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.my-cv:hover{
+  background-color: var(--vt-c-white);
+  color: white;
+  transition: all 0.3s ease-in-out;
 }
 
 </style>
