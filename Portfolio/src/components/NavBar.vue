@@ -3,7 +3,7 @@
 
 <template>
   <header>
-    <div class="navbar fixed top-0 flex justify-between w-full items-center mb-3">
+    <div class="navbar top-0 flex justify-between w-full items-center mb-3">
       <h1 class="name-logo">Hello, I'm Benjamin!</h1>
   
       <nav>
@@ -20,15 +20,14 @@
   </header>
 </template>
 
-
 <style scoped>
 
 header {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   height: 80px;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
   transition: all 0.4s ease-in-out;
 }

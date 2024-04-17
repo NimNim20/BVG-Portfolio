@@ -37,6 +37,7 @@
 .home-section{
   display: grid;
   grid-template-columns: repeat(15, 1fr);
+  justify-content: center;
   align-items: center;
   gap: 100px;
   width: 90%;
@@ -57,6 +58,9 @@
   grid-column-start: 6;
   grid-column-end: 15;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .name-section{
@@ -65,7 +69,7 @@
 }
 
 .introduction{
-  color: #fff;
+  color: #000;
   font-size: 25px;
 }
 

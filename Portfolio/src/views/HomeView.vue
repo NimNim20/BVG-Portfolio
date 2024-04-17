@@ -19,16 +19,23 @@
 </template>
 
 
-<style>
+<style lang="scss">
+
+body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0; /* fallback background color */
+      /* Use the Theme.svg as the background image */
+      background-image: url('../assets/Theme.svg');
+      background-size: fill; /* Adjust as needed */
+      background-repeat: no-repeat;
+    }
+
+  @media screen and (max-width: 1220px){
+    body{
+      background-color: #f0f0f0;
+      background-image: none;
+    }
+  }
 
 </style>
-
-
-
-
-
-
-
-<!-- <div class="video-cv">
-  <iframe width="750" height="420" src="https://www.youtube.com/embed/3uHmMDMjjwU" title="Video CV - Benjamin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div> -->
