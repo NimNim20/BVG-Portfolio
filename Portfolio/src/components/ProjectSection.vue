@@ -1,37 +1,39 @@
 <template>
   <div id="scrollToProjects" class="projects">
-    <div v-for="projectItem in filteredProjectItems" :key="projectItem" class="card w-1/2">
-        <div class="filter-buttons flex justify-center mb-4">
-          <h1 class="text-1xl font-bold underline">
-            <button @click="selectedCategory = 'Web'" class="text-white p-2">Web</button>
-            <button @click="selectedCategory = 'Photo'" class="text-white p-2">Photo</button>
-            <button @click="selectedCategory = ''" class="text-white p-2">All</button>
-          </h1>
-        </div>
-        <h2 class="text-white">{{ projectItem.title }}</h2>
-
-        <p :class="projectItem.category">{{ projectItem.category }}</p>
-
-        <div class="project-items flex justify-center items-center">
-          <div class="info mr-4">
-            <router-link :to="`/projectdetails/${projectItem.id}`">
-              <p class="text-white font-bold underline">Click me for more details</p>
-            </router-link>
-          </div>          
-        </div>
-
-        <div class="flex flex-row items-center">
-          <div class="info-text">
-            <p class="text-white">{{ projectItem.teaser }}</p>
-          </div>  
-          
-          <img :src="projectItem.image" alt="" class="filler-image bg-yellow-900">
-        </div>
-          <div v-if="projectItem.link">
-            <a :href="projectItem.link" class="text-white font-bold underline">Go to project here</a>
+    <div class="sectioning">
+      <div v-for="projectItem in filteredProjectItems" :key="projectItem" class="card">
+          <div class="filter-buttons flex justify-center mb-4">
+            <h1 class="text-1xl font-bold underline">
+              <button @click="selectedCategory = 'Web'" class="text-white p-2">Web</button>
+              <button @click="selectedCategory = 'Photo'" class="text-white p-2">Photo</button>
+              <button @click="selectedCategory = ''" class="text-white p-2">All</button>
+            </h1>
           </div>
-          <div v-else>
-        </div>
+          <h2 class="text-white">{{ projectItem.title }}</h2>
+  
+          <!-- <p :class="projectItem.category">{{ projectItem.category }}</p> -->
+  
+          <div class="project-items">
+            <div class="info">
+              <router-link :to="`/projectdetails/${projectItem.id}`">
+                <p class="text-white font-bold underline">Click me for more details</p>
+              </router-link>
+            </div>          
+          </div>
+  
+          <div class="flex flex-row items-center">
+            <div class="info-text">
+              <p class="text-white">{{ projectItem.teaser }}</p>
+            </div>  
+            
+            <img :src="projectItem.image" alt="" class="filler-image">
+          </div>
+            <div v-if="projectItem.link">
+              <a :href="projectItem.link" class="text-white font-bold underline">Go to project here</a>
+            </div>
+            <div v-else>
+          </div>
+      </div>
     </div>
   </div>
 </template>
@@ -55,17 +57,30 @@ const filteredProjectItems = computed(() => {
 
 <style lang="scss" scoped>
 .projects{
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: auto;
-  padding: 100px 0;
   gap: 50px;
+}
+
+.sectioning{
+  background-color: #d5d5d5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .card {
   height: auto;
-  // width: 55%;
+  width: 40%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color:#333;
   background-color: #301E67;
   padding: 1rem;

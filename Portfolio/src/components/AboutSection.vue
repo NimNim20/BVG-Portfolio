@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .video-cv{
