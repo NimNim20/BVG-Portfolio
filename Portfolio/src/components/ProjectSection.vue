@@ -2,34 +2,28 @@
   <div id="scrollToProjects" class="projects">
     <div class="sectioning">
       <div v-for="projectItem in filteredProjectItems" :key="projectItem" class="card">
-          <div class="filter-buttons flex justify-center mb-4">
-            <h1 class="text-1xl font-bold underline">
+          <div class="filter-buttons font-bold flex justify-center mb-2">
+            <h1>
               <button @click="selectedCategory = 'Web'" class="text-white p-2">Web</button>
-              <button @click="selectedCategory = 'Photo'" class="text-white p-2">Photo</button>
+              <button @click="selectedCategory = 'App'" class="text-white p-2">App</button>
+              <button @click="selectedCategory = 'Video'" class="text-white p-2">Video</button>
               <button @click="selectedCategory = ''" class="text-white p-2">All</button>
             </h1>
           </div>
-          <h2 class="text-white">{{ projectItem.title }}</h2>
+          <img :src="projectItem.image" alt="" class="filler-image">
+          <h2 class="text-white font-bold">{{ projectItem.title }}</h2>
   
-          <!-- <p :class="projectItem.category">{{ projectItem.category }}</p> -->
-  
-          <div class="project-items">
-            <div class="info">
-              <router-link :to="`/projectdetails/${projectItem.id}`">
-                <p class="text-white font-bold underline">Click me for more details</p>
-              </router-link>
-            </div>          
-          </div>
-  
-          <div class="flex flex-row items-center">
-            <div class="info-text">
-              <p class="text-white">{{ projectItem.teaser }}</p>
+          <div class="info-text">
+            <div class="description">
+              <p class="text-white">{{ projectItem.description }}</p>
             </div>  
             
-            <img :src="projectItem.image" alt="" class="filler-image">
           </div>
+            <div class="required">
+              <p class="text-white font-bold">{{ projectItem.require }}</p>
+            </div>
             <div v-if="projectItem.link">
-              <a :href="projectItem.link" class="text-white font-bold underline">Go to project here</a>
+              <a :href="projectItem.link" class="project-link text-white font-bold underline">Go to project here</a>
             </div>
             <div v-else>
           </div>
@@ -58,7 +52,7 @@ const filteredProjectItems = computed(() => {
 <style lang="scss" scoped>
 .projects{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: auto;
@@ -66,40 +60,39 @@ const filteredProjectItems = computed(() => {
 }
 
 .sectioning{
-  background-color: #d5d5d5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
   gap: 10px;
 }
 
 .card {
-  height: auto;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color:#333;
-  background-color: #301E67;
-  padding: 1rem;
-  margin-top: 4rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    width: 80%;
+    max-width: 1200px;
+    height: auto;
+    background-color: var(--vt-c-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  }
 
 .card img {
   display: flex;
-  width: 55%;
+  width: 60%;
   height: 55%;
-  margin: 1rem 0 0 1rem;
+  margin: 1rem;
 }
 
 .info-text{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 5%;
@@ -112,5 +105,72 @@ const filteredProjectItems = computed(() => {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.project-link{
+  transition: all 0.3s ease-in-out;
+}
+
+.project-link:hover{
+  color: var(--vt-c-white-soft);
+  transition: all 0.3s ease-in-out;
+}
+
+
+@media only screen and (max-width: 1220px) {
+  .card {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .card img {
+    width: 60%;
+    height: 100%;
+  }
+
+  .info-text{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .project-items {
+    width: 100%;
+  }
+
+  .filter-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-1xl {
+    font-size: 1.5rem;
+  }
+  
+}
+
+@media (max-width: 768px){
+  .projects{
+    padding: 0 20px;
+  }
+
+  .card{
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  .card img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 </style>

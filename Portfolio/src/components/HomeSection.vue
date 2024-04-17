@@ -10,13 +10,12 @@
       <div class="text">
         <h1 class="name-section"></h1>
         <p class="introduction"> 
-          My name is <strong>Benjamin Vid Gard</strong> and I am a multimedia designer. <br>
-          I am a passionate website developer who aspires to be a fullstack developer. 
+          My name is <strong>Benjamin Vid Gard</strong>, an aspiring <strong>full-stack developer</strong> with a flair for web development. I love creating websites that look appealing and work on every device.
         </p>
       </div>
       
       <div class="image">
-        <img src="@/assets/Ghost_Clothing.png" alt="" class="portrait">
+        <img src="@/assets/Portrait.jpg" alt="" class="portrait">
       </div>
 
 
@@ -31,7 +30,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  margin: 0;
+  margin-left: 5%;
 }
 
 .home-section{
@@ -52,6 +51,7 @@
 .portrait{
   width: 100%;
   border-radius: 100%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .text{
@@ -83,6 +83,7 @@
 
   .image{
     order: 2;
+    width: 50%;
   }
 
   .text{
@@ -95,6 +96,37 @@
 
   .introduction{
     font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .container{
+    height: 75vh;
+    margin-left: 0;
+  }
+        
+  .home-section{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .image{
+    order: 2;
+    width: 50%;
+  }
+
+  .text{
+    order: 1;
+  }
+
+  .name-section{
+    font-size: 30px;
+  }
+
+  .introduction{
+    font-size: 15px;
   }
 }
             

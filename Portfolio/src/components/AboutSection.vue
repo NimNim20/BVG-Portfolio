@@ -10,7 +10,8 @@
     <div class="about-content">
       <div class="about-text">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis incidunt totam est fuga libero? Est hic, quod unde dolore, deserunt quia, asperiores suscipit commodi impedit velit sint? Officiis, dicta perspiciatis.
+          Hey there! I'm an aspiring full-stack developer and multimedia designer with a passion for creating captivating digital experiences. I specialize in HTML, CSS, and JavaScript, crafting beautiful and functional websites that leave a lasting impression. <br> <br>
+          Alongside my coding skills, I'm proficient in the Adobe Creative Suite, from designing visuals in Photoshop to creating motion graphics in After Effects. I'm always eager to tackle new challenges and push the boundaries of creativity in both design and development.
         </p>
       </div>
 
@@ -19,7 +20,9 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/3uHmMDMjjwU" title="Video CV - Benjamin" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
-      <button class="my-cv">Download My CV .pdf</button>
+      <div class="downloadCV">
+        <button class="my-cv">Download My CV .pdf</button>
+      </div>
 
     </div>
 
@@ -35,6 +38,7 @@
   justify-content: center;
   height: 100vh;
   padding: 50px 0;
+  background-color: var(--vt-c-white);
 }
 
 .video-cv{
@@ -52,7 +56,7 @@
 // }
 
 .title{
-  color: #000;
+  color: #fff;
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 2rem;
@@ -71,7 +75,7 @@
 
 .about-text{
   display: flex;
-  color: #000;
+  color: #fff;
   font-size: 18px;
   align-items: center;
   grid-column-start: 2;
@@ -82,8 +86,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #000;
-  background-color: var(--vt-c-white);
+  color: #fff;
+  background-color: grey;
   padding: 10px 20px;
   height: 100px;
   width: 175px;
@@ -95,6 +99,57 @@
   background-color: var(--vt-c-white);
   color: white;
   transition: all 0.3s ease-in-out;
+}
+
+.downloadCV{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column-start: 10;
+  grid-column-end: 15;
+}
+
+
+@media only screen and (max-width: 1220px) {
+  .about-content{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .about-text{
+    order: 2;
+  }
+
+  .video-cv{
+    order: 1;
+  }
+
+  .my-cv{
+    order: 3;
+  }
+
+  .downloadCV{
+    order: 4;
+  }
+}
+
+@media (max-width: 768px){
+  .title{
+    font-size: 1.5rem;
+    margin-top: 10%;
+  }
+
+  .about-text{
+    font-size: 16px;
+  }
+
+  .my-cv{
+    font-size: 14px;
+    padding: 5px 10px;
+    height: 75px;
+    width: 150px;
+  }
 }
 
 </style>

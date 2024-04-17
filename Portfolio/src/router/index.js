@@ -21,14 +21,6 @@ const router = createRouter({
         title:"Projects"
       }
     },
-    {
-      path: '/projectdetails/:id',
-      name: 'Project Details',
-      component: () => import('../views/ProjectDetailsView.vue'),
-      meta: {
-        dynamicTitle: true
-      }
-    },
   ]
 })
 

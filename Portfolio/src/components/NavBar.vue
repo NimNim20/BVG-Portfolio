@@ -62,7 +62,7 @@ nav ul{
 }
 
 .navbar {
-  background-color: #301E67;
+  background-color: var(--vt-c-white);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
