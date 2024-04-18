@@ -21,7 +21,9 @@
       </div>
 
       <div class="downloadCV">
-        <button class="my-cv">Download My CV .pdf</button>
+        <a href="CV - Benjamin.pdf" download="CV - Benjamin.pdf">
+          <button class="my-cv">Download My CV .pdf</button>
+        </a>
       </div>
 
     </div>

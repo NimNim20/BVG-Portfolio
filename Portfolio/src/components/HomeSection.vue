@@ -15,7 +15,7 @@
       </div>
       
       <div class="image">
-        <img src="@/assets/Portrait.jpg" alt="" class="portrait">
+        <img src="@/assets/Portrait.png" alt="" class="portrait">
       </div>
 
 
@@ -27,7 +27,7 @@
 <style lang="scss" scoped>
 
 .container{
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   // margin-left: 5%;
@@ -40,7 +40,7 @@
   align-items: center;
   gap: 100px;
   width: 90%;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 
 .image{
@@ -50,8 +50,10 @@
 
 .portrait{
   width: 100%;
+  height: auto;
   border-radius: 100%;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
 }
 
 .text{
@@ -71,6 +73,7 @@
 .introduction{
   color: #000;
   font-size: 25px;
+  margin-top: 10px;
 }
 
 @media only screen and (max-width: 1220px) {
