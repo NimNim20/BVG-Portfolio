@@ -11,10 +11,16 @@
           </div>
           <div class="platforms">
             <h3 class="socials"><strong>My Platforms</strong></h3>
-            <div class="social-icons">
-              <!-- <img src="../assets/linkedin-logo.svg" alt="" class="social-icons">
-              <img src="../assets/github-logo.svg" alt="" class="social-icons"> -->
-            </div>
+              <a href="https://github.com/NimNim20">
+                <h3>My GitHub Profile</h3>
+                <img class="social-icons flex justify-center h-24 w-24" src="../assets/github.svg" alt="Github Icon">
+              </a>
+            
+              <a href="https://www.linkedin.com/in/benjamin-vid-gard-387254293/">
+                <h3>My LinkedIn Profile</h3>
+                <img class="social-icons h-24 w-24" src="../assets/linkedin.svg" alt="">
+              </a>
+            
           </div>            
         </div>
     </div>
@@ -42,13 +48,25 @@
 
 .socials{
   margin-bottom: 10px;
+  display: flex;
   // color: #fff;
 }
 
+.platforms{
+  // gap: 10px;
+}
+
 .social-icons{
-  width: 30px;
+  width: 40px;
   display: flex;
+  flex-direction: row;
   gap: 20px;
+  justify-content: center;
+  // justify-content: space-around;
+}
+
+li{
+  list-style: none;
 }
 
 
