@@ -22,7 +22,7 @@
 
 <style scoped lang="scss">
 .fourth-container{
-  padding: 100px 5%;
+  padding: 75px 5%;
   margin: 0 auto;
   background-color: var(--vt-c-white);
   color: #fff;
@@ -57,6 +57,12 @@
 
 
 @media (max-width: 768px){
+  .fourth-container{
+    padding-bottom: 350px;
+    margin: 0 auto;
+
+  }
+
   .info{
     flex-direction: column;
     gap: 50px;

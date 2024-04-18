@@ -69,19 +69,18 @@ const filteredProjectItems = computed(() => {
 }
 
 .card {
-    width: 80%;
-    max-width: 1200px;
-    height: auto;
-    background-color: var(--vt-c-white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-  }
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  background-color: var(--vt-c-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 .card img {
   display: flex;

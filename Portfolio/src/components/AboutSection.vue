@@ -59,7 +59,7 @@
   color: #fff;
   font-size: 2rem;
   font-weight: 500;
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +96,7 @@
 }
 
 .my-cv:hover{
-  background-color: var(--vt-c-white);
+  background-color: var(--vt-c-white-soft);
   color: white;
   transition: all 0.3s ease-in-out;
 }
@@ -114,7 +114,7 @@
   .about-content{
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    // gap: 50px;
   }
 
   .about-text{
@@ -137,7 +137,7 @@
 @media (max-width: 768px){
   .title{
     font-size: 1.5rem;
-    margin-top: 10%;
+    margin-top: 5%;
   }
 
   .about-text{

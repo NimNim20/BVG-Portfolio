@@ -30,7 +30,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  margin-left: 5%;
+  // margin-left: 5%;
 }
 
 .home-section{
