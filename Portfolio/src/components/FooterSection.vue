@@ -40,10 +40,6 @@
   font-size: 20px;
 }
 
-.email{
-  // color: #fff;
-}
-
 .socials{
   margin-bottom: 10px;
   // color: #fff;

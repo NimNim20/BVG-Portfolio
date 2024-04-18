@@ -137,7 +137,8 @@
 @media (max-width: 768px){
   .title{
     font-size: 1.5rem;
-    margin-top: 5%;
+    // margin-top: 5%;
+    margin-bottom: 35px;
   }
 
   .about-text{
