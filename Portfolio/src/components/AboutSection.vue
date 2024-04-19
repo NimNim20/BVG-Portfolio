@@ -155,4 +155,36 @@
   }
 }
 
+@media only screen and (max-width: 828px){
+  .about-container{
+    padding-bottom: 350px;
+    margin: 0 auto;
+  }
+
+  .about-content{
+    display: flex;
+    flex-direction: column;
+    // gap: 25px;
+  }
+
+  .video-cv{
+    width: 100%;
+    height: 56.25vh;
+    order: 1;
+  }
+
+  .my-cv{
+    order: 3;
+  }
+
+  .downloadCV{
+    order: 4;
+  }
+
+  .about-text{
+    font-size: 14px;
+    order: 2;
+  }
+}
+
 </style>

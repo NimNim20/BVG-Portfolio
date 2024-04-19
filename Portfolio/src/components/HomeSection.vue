@@ -44,6 +44,9 @@
 }
 
 .image{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
   grid-column-start: 2;
   grid-column-end: 6;
 }
@@ -131,6 +134,37 @@
   .introduction{
     font-size: 15px;
   }
+}
+
+@media only screen and (max-width: 828px){
+  .container{
+    height: 75vh;
+    margin-left: 0;
+  }
+        
+  .home-section{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .image{
+    order: 2;
+    width: 50%;
+  }
+
+  .text{
+    order: 1;
+  }
+
+  .name-section{
+    font-size: 30px;
+  }
+
+  .introduction{
+    font-size: 15px;
+  }
+
 }
             
 </style>

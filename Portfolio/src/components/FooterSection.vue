@@ -83,4 +83,17 @@ li{
   }
 }
 
+@media only screen and (max-width: 828px){
+  .fourth-container{
+    padding-bottom: 350px;
+    margin: 0 auto;
+
+  }
+
+  .info{
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
 </style>
