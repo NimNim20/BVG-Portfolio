@@ -11,16 +11,10 @@
           </div>
           <div class="platforms">
             <h3 class="socials"><strong>My Platforms</strong></h3>
-              <a href="https://github.com/NimNim20">
-                <h3>My GitHub Profile</h3>
-                <img class="social-icons flex justify-center h-24 w-24" src="../assets/github.svg" alt="Github Icon">
-              </a>
-            
-              <a href="https://www.linkedin.com/in/benjamin-vid-gard-387254293/">
-                <h3>My LinkedIn Profile</h3>
-                <img class="social-icons h-24 w-24" src="../assets/linkedin.svg" alt="">
-              </a>
-            
+            <div class="social-icons">
+              <a target="_blank" href="www.linkedin.com/in/benjaminvidgard" class="social-links"><img src="@/assets/linkedin.svg" alt="" class="social-icons"></a>
+              <a target="_blank" href="https://github.com/NimNim20" class="social-links"><img src="@/assets/github.svg" alt="" class="social-icons"></a>
+            </div>
           </div>            
         </div>
     </div>
@@ -57,42 +51,67 @@
 }
 
 .social-icons{
-  width: 40px;
+  width: 75%;
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  justify-content: center;
-  // justify-content: space-around;
+  justify-content: start;
+  gap: 5px;
+
+  a{
+    width: 10%;
+  }
 }
 
-li{
-  list-style: none;
-}
 
 
 @media (max-width: 768px){
   .fourth-container{
-    padding-bottom: 350px;
+    padding-bottom: 25%;
+    padding-top: 50%;
     margin: 0 auto;
 
   }
 
   .info{
     flex-direction: column;
-    gap: 50px;
+    gap: 25px;
   }
 }
 
-@media only screen and (max-width: 828px){
+@media only screen and (max-width: 932px){
   .fourth-container{
-    padding-bottom: 350px;
+    padding-bottom: 5%;
+    padding-top: 5%;
     margin: 0 auto;
-
+    // height: fit-content;
   }
 
   .info{
     flex-direction: column;
-    gap: 50px;
+    gap: 25px;
+  }
+
+  .platforms{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .socials{
+    margin-bottom: 0;
+    display: flex;
+  }
+
+  .social-icons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: start;
+  }
+
+  .social-links{
+    width: 40px;
   }
 }
 

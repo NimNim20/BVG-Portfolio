@@ -116,6 +116,7 @@
   .about-content{
     display: flex;
     flex-direction: column;
+    gap: 20px;
     // gap: 50px;
   }
 
@@ -155,21 +156,23 @@
   }
 }
 
-@media only screen and (max-width: 828px){
+@media only screen and (max-width: 932px){
   .about-container{
-    padding-bottom: 350px;
+    padding-bottom: 5%;
     margin: 0 auto;
   }
 
   .about-content{
     display: flex;
     flex-direction: column;
+
     // gap: 25px;
   }
 
   .video-cv{
     width: 100%;
-    height: 56.25vh;
+    height: 50%;
+    gap: 5px;
     order: 1;
   }
 
